@@ -27,14 +27,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func redTouched() {
-
+        self.animateFace(self.sadFace)
     }
 
     @IBAction func yellowTouched() {
-
+        self.animateFace(self.neutralFace)
     }
 
     @IBAction func greedTouched() {
+        self.animateFace(self.happyFace)
+    }
 
+    func animateFace(image: UIImageView) {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            image.transform = CGAffineTransformMakeScale(1.5, 1.5)
+        }) { _ in
+            image.transform = CGAffineTransformIdentity
+        }
     }
 }
