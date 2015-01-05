@@ -1,0 +1,16 @@
+*~
+.DS_Store
+
+# Xcode
+*/build/*
+*.pbxuser
+!default.pbxuser
+xcuserdata
+project.xcworkspace
+*.xccheckout
+
+# Temp files and such
+*.swp
+*.out
+*.dot
+
