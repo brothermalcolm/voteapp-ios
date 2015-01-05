@@ -17,25 +17,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var neutralFace: UIImageView!
     @IBOutlet weak var happyFace: UIImageView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
 
     @IBAction func redTouched() {
         self.animateFace(self.sadFace)
+        self.incrementAndStoreScore(kBadVotesKey)
     }
 
     @IBAction func yellowTouched() {
         self.animateFace(self.neutralFace)
+        self.incrementAndStoreScore(kNeutralVotesKey)
     }
 
     @IBAction func greedTouched() {
         self.animateFace(self.happyFace)
+        self.incrementAndStoreScore(kGoodVotesKey)
     }
 
     func animateFace(image: UIImageView) {
@@ -44,5 +42,11 @@ class ViewController: UIViewController {
         }) { _ in
             image.transform = CGAffineTransformIdentity
         }
+    }
+
+    func incrementAndStoreScore(key: String) {
+        var currentValue = NSUserDefaults.standardUserDefaults().integerForKey(key)
+        ++currentValue
+        NSUserDefaults.standardUserDefaults().setInteger(currentValue, forKey: key)
     }
 }
