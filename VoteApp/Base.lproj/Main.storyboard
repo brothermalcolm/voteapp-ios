@@ -25,10 +25,14 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.43921571969985962" green="0.83137261867523193" blue="0.17254902422428131" alpha="1" colorSpace="deviceRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="TrZ-rr-91D" secondAttribute="centerY" id="Kv8-aK-qtm"/>
                                     <constraint firstAttribute="centerX" secondItem="TrZ-rr-91D" secondAttribute="centerX" id="RPV-3S-wV3"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KCb-IR-HrR" appends="YES" id="3Ix-N7-5QQ"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8K-Vs-VLq">
                                 <rect key="frame" x="200" y="0.0" width="200" height="600"/>
@@ -38,10 +42,14 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97872165084388185" green="0.97842220710924876" blue="0.00054308058422362156" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="jEz-iD-jGm" secondAttribute="centerY" id="gUO-x8-lab"/>
                                     <constraint firstAttribute="centerX" secondItem="jEz-iD-jGm" secondAttribute="centerX" id="qJ8-MQ-eJB"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="z1F-BD-pDd" appends="YES" id="AfN-ta-Pdo"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spj-0Q-6zJ">
                                 <rect key="frame" x="400" y="0.0" width="200" height="600"/>
@@ -51,10 +59,14 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="2nR-CK-M98" secondAttribute="centerY" id="0B0-GE-bQH"/>
                                     <constraint firstAttribute="centerX" secondItem="2nR-CK-M98" secondAttribute="centerX" id="1Nm-Bf-E1Q"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="arc-nY-0KJ" appends="YES" id="iXx-JG-Qdz"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -73,8 +85,28 @@
                             <constraint firstItem="HCo-eN-ddV" firstAttribute="width" secondItem="spj-0Q-6zJ" secondAttribute="width" id="vjc-jt-N1A"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="happyFace" destination="TrZ-rr-91D" id="9Fr-yr-tem"/>
+                        <outlet property="neutralFace" destination="jEz-iD-jGm" id="eTf-CN-quI"/>
+                        <outlet property="sadFace" destination="2nR-CK-M98" id="nIh-f2-hbq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KCb-IR-HrR">
+                    <connections>
+                        <action selector="greedTouched" destination="BYZ-38-t0r" id="vdX-H5-zn9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="z1F-BD-pDd">
+                    <connections>
+                        <action selector="yellowTouched" destination="BYZ-38-t0r" id="eo4-MS-FJO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="arc-nY-0KJ">
+                    <connections>
+                        <action selector="redTouched" destination="BYZ-38-t0r" id="5It-Ws-CEj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
