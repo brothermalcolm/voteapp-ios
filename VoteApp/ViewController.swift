@@ -12,6 +12,9 @@ private let kGoodVotesKey = "prefGoodKey"
 private let kNeutralVotesKey = "prefNeutralKey"
 private let kBadVotesKey = "prefBadKey"
 
+private let kAnimationDuration = 0.2
+private let kAnimationResizeScale: CGFloat = 1.5
+
 enum ResultType: Int {
     case Good = 0
     case Neutral = 1
@@ -62,11 +65,11 @@ class ViewController: UIViewController {
     }
 
     func animateFace(image: UIImageView) {
-        UIView.animateWithDuration(0.2, animations: { () -> Void in
-            image.transform = CGAffineTransformMakeScale(1.5, 1.5)
-            }) { _ in
-                image.transform = CGAffineTransformIdentity
-        }
+        UIView.animateWithDuration(kAnimationDuration, animations: { () -> Void in
+            image.transform = CGAffineTransformMakeScale(kAnimationResizeScale, kAnimationResizeScale)
+        }, { _ in
+            image.transform = CGAffineTransformIdentity
+        })
     }
 
     func incrementAndStoreScore(resultType: ResultType) {
