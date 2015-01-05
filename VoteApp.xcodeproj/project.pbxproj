@@ -407,6 +407,7 @@
 				9C4BFF161A5A9C0300B5C2D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C4BFF171A5A9C0300B5C2D2 /* Build configuration list for PBXNativeTarget "VoteAppTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +416,7 @@
 				9C4BFF191A5A9C0300B5C2D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
