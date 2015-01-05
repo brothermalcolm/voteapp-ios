@@ -8,31 +8,8 @@
 
 import UIKit
 
-private let kGoodVotesKey = "prefGoodKey"
-private let kNeutralVotesKey = "prefNeutralKey"
-private let kBadVotesKey = "prefBadKey"
-
 private let kAnimationDuration = 0.2
 private let kAnimationResizeScale: CGFloat = 1.5
-
-enum ResultType: Int {
-    case Good = 0
-    case Neutral = 1
-    case Bad = 2
-}
-
-extension ResultType {
-    var key: String {
-        switch self {
-        case .Good:
-            return kGoodVotesKey
-        case .Neutral:
-            return kNeutralVotesKey
-        case .Bad:
-            return kBadVotesKey
-        }
-    }
-}
 
 class ViewController: UIViewController {
 
