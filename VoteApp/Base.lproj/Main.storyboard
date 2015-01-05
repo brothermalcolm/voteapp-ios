@@ -24,7 +24,7 @@
                                         <rect key="frame" x="70" y="270" width="60" height="60"/>
                                     </imageView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLD-58-OYl">
-                                        <rect key="frame" x="95" y="338" width="10" height="21"/>
+                                        <rect key="frame" x="95" y="338" width="10" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                                 <rect key="frame" x="200" y="0.0" width="200" height="600"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELI-ed-t5o">
-                                        <rect key="frame" x="95" y="338" width="10" height="21"/>
+                                        <rect key="frame" x="95" y="338" width="10" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                                         <rect key="frame" x="70" y="270" width="60" height="60"/>
                                     </imageView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIT-6u-GCl">
-                                        <rect key="frame" x="95" y="338" width="10" height="21"/>
+                                        <rect key="frame" x="95" y="338" width="10" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -119,6 +119,12 @@
                                     <action selector="clearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Txd-dx-sfa"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some of the icons come from icons8.com under CC BY-ND 3.0 licence" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77h-tG-vEz">
+                                <rect key="frame" x="9" y="576" width="426" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -133,7 +139,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HCo-eN-ddV" secondAttribute="bottom" id="IW5-UR-Uys"/>
                             <constraint firstItem="7nE-W5-Ekm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="8" id="KJ0-5L-Ir0"/>
                             <constraint firstItem="O8K-Vs-VLq" firstAttribute="leading" secondItem="HCo-eN-ddV" secondAttribute="trailing" id="U09-cg-mfs"/>
+                            <constraint firstItem="77h-tG-vEz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="9" id="V53-aB-oaW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O8K-Vs-VLq" secondAttribute="bottom" id="aNN-2g-wIS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="77h-tG-vEz" secondAttribute="bottom" constant="8" id="aZZ-Ec-v06"/>
                             <constraint firstItem="spj-0Q-6zJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bEO-ZR-w7x"/>
                             <constraint firstItem="jOI-XF-0cs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="8" id="bSd-xk-H8U"/>
                             <constraint firstItem="O8K-Vs-VLq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="eo1-42-Ay0"/>
@@ -143,6 +151,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attributionLabel" destination="77h-tG-vEz" id="996-uT-zT3"/>
                         <outlet property="clearButton" destination="jOI-XF-0cs" id="ufF-8M-6EP"/>
                         <outlet property="infoButton" destination="7nE-W5-Ekm" id="MSX-ai-fgZ"/>
                         <outlet property="resultsButton" destination="d4y-HL-j8q" id="oye-Mu-eSu"/>

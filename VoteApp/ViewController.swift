@@ -40,6 +40,8 @@ class ViewController: UIViewController {
     @IBOutlet var resultLabels: [UILabel]!
     @IBOutlet var faces: [UIImageView]!
 
+    @IBOutlet weak var attributionLabel: UILabel!
+
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -82,6 +84,7 @@ class ViewController: UIViewController {
     @IBAction func infoTapped(sender: UIButton) {
         self.resultsButton.hidden = !self.resultsButton.hidden
         self.clearButton.hidden = !self.clearButton.hidden
+        self.attributionLabel.hidden = !self.attributionLabel.hidden
     }
 
     @IBAction func resultsTapped(sender: UIButton) {
