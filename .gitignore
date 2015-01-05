@@ -14,3 +14,4 @@ project.xcworkspace
 *.out
 *.dot
 
+Pods/
