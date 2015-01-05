@@ -33,33 +33,44 @@ extension ResultType {
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var sadFace: UIImageView!
-    @IBOutlet weak var neutralFace: UIImageView!
-    @IBOutlet weak var happyFace: UIImageView!
-
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var resultsButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
 
     @IBOutlet var resultLabels: [UILabel]!
+    @IBOutlet var faces: [UIImageView]!
 
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
 
-    @IBAction func redTouched() {
-        self.animateFace(self.sadFace)
-        self.incrementAndStoreScore(ResultType.Bad)
+    @IBAction func greedTouched() {
+        self.animateFace(self.faces[ResultType.Good.rawValue])
+        self.incrementAndStoreScore(ResultType.Good)
     }
 
     @IBAction func yellowTouched() {
-        self.animateFace(self.neutralFace)
+        self.animateFace(self.faces[ResultType.Neutral.rawValue])
         self.incrementAndStoreScore(ResultType.Neutral)
     }
 
-    @IBAction func greedTouched() {
-        self.animateFace(self.happyFace)
-        self.incrementAndStoreScore(ResultType.Good)
+    @IBAction func redTouched() {
+        self.animateFace(self.faces[ResultType.Bad.rawValue])
+        self.incrementAndStoreScore(ResultType.Bad)
+    }
+
+    func animateFace(image: UIImageView) {
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            image.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            }) { _ in
+                image.transform = CGAffineTransformIdentity
+        }
+    }
+
+    func incrementAndStoreScore(resultType: ResultType) {
+        var currentValue = self.scoreForType(resultType)
+        self.storeScore(++currentValue, forType: resultType)
+        self.refreshDisplayedData()
     }
 
     func refreshDisplayedData() {
@@ -81,20 +92,6 @@ class ViewController: UIViewController {
 
     @IBAction func clearTapped(sender: UIButton) {
         self.clearData()
-        self.refreshDisplayedData()
-    }
-
-    func animateFace(image: UIImageView) {
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-            image.transform = CGAffineTransformMakeScale(1.5, 1.5)
-        }) { _ in
-            image.transform = CGAffineTransformIdentity
-        }
-    }
-
-    func incrementAndStoreScore(resultType: ResultType) {
-        var currentValue = self.scoreForType(resultType)
-        self.storeScore(++currentValue, forType: resultType)
         self.refreshDisplayedData()
     }
 
