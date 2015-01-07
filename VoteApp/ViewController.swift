@@ -22,6 +22,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var attributionLabel: UILabel!
 
+    private let scoreModel = ScoreModel()
+
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -50,14 +52,14 @@ class ViewController: UIViewController {
     }
 
     func incrementAndStoreScore(resultType: ResultType) {
-        var currentValue = self.scoreForType(resultType)
-        self.storeScore(++currentValue, forType: resultType)
+        var currentValue = self.scoreModel.scoreForType(resultType)
+        self.scoreModel.storeScore(++currentValue, forType: resultType)
         self.refreshDisplayedData()
     }
 
     func refreshDisplayedData() {
         for (index, label) in enumerate(self.resultLabels) {
-            label.text = String(self.scoreForType(ResultType(rawValue: index)!))
+            label.text = String(self.scoreModel.scoreForType(ResultType(rawValue: index)!))
         }
     }
 
@@ -74,21 +76,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clearTapped(sender: UIButton) {
-        self.clearData()
+        self.scoreModel.clearData()
         self.refreshDisplayedData()
-    }
-
-    func scoreForType(resultType: ResultType) -> Int {
-        return NSUserDefaults.standardUserDefaults().integerForKey(resultType.key)
-    }
-
-    func storeScore(score: Int, forType resultType: ResultType) {
-        NSUserDefaults.standardUserDefaults().setInteger(score, forKey: resultType.key)
-    }
-
-    func clearData() {
-        self.storeScore(0, forType: ResultType.Good)
-        self.storeScore(0, forType: ResultType.Neutral)
-        self.storeScore(0, forType: ResultType.Bad)
     }
 }
